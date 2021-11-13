@@ -19,6 +19,14 @@ class Rash:
         elif self.mod == 'костюм':
             return self.cl * 2 + 0.3
 
+    @property
+    def coat(self):
+        return round(self.cl / 6.5 + 0.5,2)
+
+    @property
+    def suit(self):
+        return round(self.cl * 2 + 0.3, 2)
+
     def __str__(self):
         if self.mod not in ('костюм', 'пальто'):
             return f'Модель {self.mod} не изготавливается'
@@ -30,5 +38,9 @@ a = Rash('пальто', 42)
 b = Rash('костюм', 160)
 c = Rash('килт', 60)
 print(a)
+print(a.coat)
+print(a.suit)
+
 print(b)
 print(c)
+print(b.suit)
